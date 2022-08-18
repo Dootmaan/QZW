@@ -1,1 +1,4 @@
 /* pages/switchface/switchface.wxss */
+.preview{
+  background-color: rosybrown;
+}

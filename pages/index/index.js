@@ -47,5 +47,8 @@ Page({
   },
   goSwitchFace: function(){
     wx.navigateTo({url:'/pages/switchface/switchface'})
+  },
+  goMySpace: function(){
+    wx.navigateTo({url:'/pages/myspace/myspace'})
   }
 })
