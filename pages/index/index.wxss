@@ -17,3 +17,28 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.container{
+  /* background-image:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fyouimg1.c-ctrip.com%2Ftarget%2F10090l000000csj2r50D0.jpg&refer=http%3A%2F%2Fyouimg1.c-ctrip.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1663425347&t=5ba4cb5e00addf32bd5da54756e3893f); */
+  margin:0px;
+  background: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fyouimg1.c-ctrip.com%2Ftarget%2F10090l000000csj2r50D0.jpg&refer=http%3A%2F%2Fyouimg1.c-ctrip.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1663425347&t=5ba4cb5e00addf32bd5da54756e3893f) no-repeat;
+  background-size:100% 100%;
+  background-attachment:fixed;
+}
+
+.btn{
+  position: absolute;
+            text-align: center;
+            bottom: 0;
+            font-size: 16px;
+            /* color: #FFFFFF; */
+            margin: 25px 0;
+            /* width: 335px;
+            height: 45px; */
+            /* line-height: 45px;
+            background: #E0E0E0; */
+            border-radius: 5px;
+            background-color: #1B68FD;
+            left: 50%;
+            transform: translateX(-50%);
+}

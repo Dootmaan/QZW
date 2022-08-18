@@ -3,7 +3,7 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/switchface/switchface",
-    "pages/myspace/myspace",
+    "pages/guide/guide",
     "pages/preview/preview"
   ],
   "window":{

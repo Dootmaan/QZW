@@ -1,7 +1,8 @@
 <!--pages/switchface/switchface.wxml-->
 <!-- <text>pages/switchface/switchface.wxml</text> -->
-<camera device-position="front" flash="auto" binderror="error" style="width: 100%; height: 300px;"></camera>
-<button type="primary" style="margin-top: 15px;" bindtap="takePhoto">拍照</button>
+<camera device-position="front" flash="auto" binderror="error" style="width: 100%; height: 90vh;"></camera>
+<button type="primary" style="margin-top: 15px; position: absolute; margin-left: 5%; width: 40%;" bindtap="takePhoto">拍照</button>
+<button style="margin-top: 15px; position: absolute; margin-left: 55%; width: 40%;" bindtap="goBack">取消</button>
 <!-- 
 <view class="preview">
 <view style="margin-top: 10px; text-align: center;">预览</view>

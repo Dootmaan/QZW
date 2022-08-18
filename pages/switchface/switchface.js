@@ -73,7 +73,11 @@ Page({
   onReachBottom() {
 
   },
-
+  goBack: function(){
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
   /**
    * Called when user click on the top right corner to share
    */

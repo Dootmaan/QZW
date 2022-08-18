@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
+<view class="container" style="height: 100vh;">
+  <!-- <view class="userinfo">
     <block wx:if="{{canIUseOpenData}}">
       <view class="userinfo-avatar" bindtap="bindViewTap">
         <open-data type="userAvatarUrl"></open-data>
@@ -15,13 +15,13 @@
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
+    </block> -->
+  <!-- </view> -->
+  <view style="margin-top: 60vh;">
     <!-- <text class="user-motto">{{motto}}</text> -->
     <button type="primary" bindtap='goSwitchFace'>拍照打卡</button>
   </view>
-  <view style="margin-top: 20px;">
-    <button style="color: green;" bindtap='goMySpace'>我的空间</button>
+  <view style="margin-top: 25px">
+    <button style="color: green;" bindtap='goGuide'>游览指南</button>
   </view>
 </view>
