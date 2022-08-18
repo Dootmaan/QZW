@@ -32,6 +32,13 @@ Page({
 
   },
 
+  findFace: function(){
+    //TODO
+  },
+
+  fuseImgs: function(){
+    //TODO
+  }
   /**
    * Lifecycle function--Called when page is initially rendered
    */
