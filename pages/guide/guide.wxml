@@ -1,6 +1,6 @@
 <!--pages/myspace/myspace.wxml-->
 <view class="container">
-  <map name="qzw">
+  <map name="qzw" style="height: 50vh; width: 80vw;">
   <!-- <cover-view slot="callout">
     <cover-view marker-id="1"></cover-view>
     <cover-view marker-id="2"></cover-view>
