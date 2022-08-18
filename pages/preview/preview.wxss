@@ -1,0 +1,4 @@
+/* pages/preview/preview.wxss */
+.preview{
+  background-color: rosybrown;
+}

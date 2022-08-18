@@ -12,8 +12,12 @@ Page({
     ctx.takePhoto({
       quality: 'high',
       success: (res) => {
-        this.setData({
-          src: res.tempImagePath
+        getApp().globalData.imgPath=res.tempImagePath
+        // this.setData({
+        //   src: res.tempImagePath
+        // })
+        wx.navigateTo({
+          url: '/pages/preview/preview',
         })
       }
     })

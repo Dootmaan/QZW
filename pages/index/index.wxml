@@ -19,7 +19,7 @@
   </view>
   <view class="usermotto">
     <!-- <text class="user-motto">{{motto}}</text> -->
-    <button style="color: green;" bindtap='goSwitchFace'>拍照打卡</button>
+    <button type="primary" bindtap='goSwitchFace'>拍照打卡</button>
   </view>
   <view style="margin-top: 20px;">
     <button style="color: green;" bindtap='goMySpace'>我的空间</button>

@@ -1,0 +1,8 @@
+<!--pages/preview/preview.wxml-->
+<!-- <text>pages/preview/preview.wxml</text> -->
+<view style="margin-top: 10px; text-align: center;">预览</view>
+<view style="text-align: center;margin: 10px;"><image mode="widthFix" src="{{imgPath}}"></image></view>
+<view>
+<button type="primary" bindtap="saveImg">保存</button>
+<button bindtap="goBack">取消</button>
+</view>
