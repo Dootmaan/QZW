@@ -1,0 +1,9 @@
+<!--pages/myspace/myspace.wxml-->
+<view class="container">
+  <map name="qzw">
+  <!-- <cover-view slot="callout">
+    <cover-view marker-id="1"></cover-view>
+    <cover-view marker-id="2"></cover-view>
+  </cover-view> -->
+</map>
+</view>
