@@ -3,8 +3,5 @@
 <camera device-position="front" flash="auto" binderror="error" style="width: 100%; height: 90vh;"></camera>
 <button type="primary" style="margin-top: 2vh; position: absolute; margin-left: 5%; width: 40%;" bindtap="takePhoto">拍照</button>
 <button style="margin-top: 2vh; position: absolute; margin-left: 55%; width: 40%;" bindtap="goBack">取消</button>
-<!-- 
-<view class="preview">
-<view style="margin-top: 10px; text-align: center;">预览</view>
-<view style="text-align: center;margin: 10px;"><image mode="widthFix" src="{{src}}"></image></view>
-</view> -->
+
+<image mode="widthFix" id="imgPrev" style="display: none;" src="{{src}}"></image>

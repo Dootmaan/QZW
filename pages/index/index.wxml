@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container" style="height: 100vh;">
-  <!-- <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
+  <!-- <view class="userinfo"> -->
+    <!-- <block wx:if="{{canIUseOpenData}}">
       <view class="userinfo-avatar" bindtap="bindViewTap">
         <open-data type="userAvatarUrl"></open-data>
       </view>
@@ -16,9 +16,9 @@
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block> -->
+    <!-- {{motto}} -->
   <!-- </view> -->
   <view style="margin-top: 60vh;">
-    <!-- <text class="user-motto">{{motto}}</text> -->
     <button type="primary" bindtap='goSwitchFace'>拍照打卡</button>
   </view>
   <view style="margin-top: 25px">

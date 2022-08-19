@@ -1,6 +1,5 @@
 // pages/switchface/switchface.js
 Page({
-
   /**
    * Page initial data
    */
@@ -13,9 +12,10 @@ Page({
       quality: 'high',
       success: (res) => {
         getApp().globalData.imgPath=res.tempImagePath
-        // this.setData({
-        //   src: res.tempImagePath
-        // })
+        this.setData({
+          src: res.tempImagePath
+        })
+        this.findFace()
         wx.navigateTo({
           url: '/pages/preview/preview',
         })
@@ -23,6 +23,17 @@ Page({
     })
   },
   error(e) {
+    wx.showModal({
+      title: '错误',
+      content: '拍照失败，请重试',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('确定')
+        } else {
+          console.log('取消')
+        }
+      }
+    })
     console.log(e.detail)
   },
   /**
@@ -34,11 +45,15 @@ Page({
 
   findFace: function(){
     //TODO
+    var query = wx.createSelectorQuery();
+    var img = query.select('#imgPrev').boundingClientRect(()=>{}).exec()
+    console.log(img)
+    // var tracker = tracking.ObjectTracker(['face']);
   },
 
   fuseImgs: function(){
     //TODO
-  }
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
