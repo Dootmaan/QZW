@@ -1,0 +1,18 @@
+<!--pages/message/message_hall.wxml-->
+
+<view class="session-list">
+<block wx:for="{{sessionList}}" wx:for-item="session" wx:key="objectId"
+wx:for-index="idx">
+  <view class="flex-wrap session"> 
+
+    
+    <text class = "tappable" bindtap = "click" data-sessionId = "{{session.objectId}}" data-type = "{{session.type}}">【{{session.type}}】{{session.nickName}} </text>
+     <view class='date'>{{" "+sessionsTime[idx]}}</view> 
+  
+  </view>
+</block>
+</view>
+<!-- <view class="footer">
+  <text class="status">{{activesessions.length}} / {{sessions.length}}</text>
+  <text ontap="removeDone" class="remove-done tappable" wx-if="{{activesessions.length !== sessions.length}}">清除已完成</text>
+</view> -->

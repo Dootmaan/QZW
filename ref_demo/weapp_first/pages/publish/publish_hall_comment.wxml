@@ -1,0 +1,82 @@
+
+
+<view class="page-wrap"> 
+  <scroll-view class="container" scroll-y="true">
+     <view class="post-list"> 
+        <view class="post-card" wx:for="{{publishs}}" wx:for-item="publish" wx:for-index="idx">
+         <view class="card-header flex flex-row">
+              <image class="avatar flex-auto" src="{{userAvatarUrl}}" mode="aspectFit"></image>
+               <view class="post-name flex-stretch">{{userNickName}}</view>   
+            <!-- <view class="post-time">{{publish.createdAt}}</view>  -->
+          </view>
+          <view class="card-body">
+            <view class="content">{{publish.content}}</view>
+            <view class="post-images">
+              <image class="post-image"
+                wx:for="{{imgs[idx]}}"
+                wx:for-item="image"
+                wx:key="{{index}}"
+                mode="aspectFill"
+                bindtap='previewImage'
+                data-src='{{image}}'
+                src="{{image}}" 
+                data-urls="{{imgs[idx]}}"/>
+            </view>
+            <view class='date' >
+              {{pubTime}}
+            </view>
+          </view>
+        </view>
+        
+     </view> 
+ </scroll-view>
+</view>
+<!--写评论  -->
+<view class="flex-wrap header">
+  <textarea
+    placeholder="说点什么.." 
+    bindinput="updateDraft" 
+    value="{{draft}}" 
+    class="new-comment"
+  ></textarea>
+  <!-- <input
+    placeholder="说点什么.." 
+    bindinput="updateDraft" 
+    value="{{draft}}" 
+    class="new-comment"/> -->
+  <text style="display: {{draft ? 'inline': 'none'}}" class="add tappable" ontap="addComment">评论</text>
+</view>
+<!--评论展示  -->
+
+
+<!-- <block wx:for="{{comments}}" wx:for-item="comment"  wx:for-index="idx">
+
+  <view class="comment-box">
+    <view  class="comment">
+
+        <image  src="{{users[idx].avatarUrl}}"></image>
+        <text >{{users[idx].nickName}}</text>
+
+    <textarea class="commenttext" auto-height='true' >
+      {{comment.content}}
+    </textarea>
+    </view>
+  </view>
+
+</block> -->
+
+<view class="comment-list">
+  <view class="comment-wrapper" wx:for="{{comments}}" wx:for-index="idx" wx:for-item="comment" >
+    <image class="avator" src="{{users[idx].avatarUrl}}"></image>
+    <view class="comment-info">
+      <view class="user">{{users[idx].nickName}}</view>
+
+      <view class="content">
+        <view class="text-content" >{{comment.content}}</view>
+      </view>
+      <!-- <view class="date">{{comment.createdAt}}</view> -->
+      <view class='date'>{{pubsTime[idx]}}</view>
+
+    </view>
+  </view>
+</view>

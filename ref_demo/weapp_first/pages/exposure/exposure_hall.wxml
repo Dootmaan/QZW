@@ -1,0 +1,95 @@
+<!--pages/publish_hall/publish_hall.wxml-->
+
+      <view class="index-hd">
+    <view class="container">
+      <view   class="userinfo">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        
+      </view>
+    </view>    
+    
+  </view>
+
+  <!-- <view   class="userinfo">
+     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text> 
+  </view> -->
+
+<view class="page-wrap"> 
+  <scroll-view class="container" scroll-y="true">
+     <view class="post-list"> 
+        <view class="post-card" wx:for="{{exposure_publishs}}" wx:for-item="publish" wx:for-index="idx">
+
+          <block wx:if="{{!publish.banned}}">
+
+            <view class="card-header flex flex-row">
+              <image class="avatar flex-auto"  src="../../images/account.png" mode="aspectFit">
+              </image>
+            <view class="post-name flex-stretch">匿名</view> 
+
+          </view>
+            <view class="card-body">
+              <view class="content">{{publish.content}}</view>
+              <view class="post-images">
+                <image class="post-image"
+                  wx:for="{{imgs[idx]}}"
+                  wx:for-item="image"
+                  wx:key="{{index}}"
+                  mode="aspectFill"
+                  bindtap='previewImage'
+                  data-src='{{image}}'
+                  src="{{image}}" 
+                  data-urls="{{imgs[idx]}}"/>
+              </view>
+              <view class="date">
+              {{pubsTime[idx]}}
+              </view>
+            </view>
+            <view class="card-buttons flex flex-row">
+              <button type="default" size="default"
+                data-publish="{{publish}}" 
+                data-userNickName = "{{users[idx].nickName}}"
+                data-userAvatarUrl="{{users[idx].avatarUrl}}"
+                data-pubtime="{{pubsTime[idx]}}"
+                class="comment flex-auto" 
+                bindtap="comment">
+                <image class="icon" src="../../images/commentOn.png" />评论<block wx:if="{{publish.commentNums}}">({{publish.commentNums}})</block>
+              </button>
+
+              <button type="default" size="default" 
+              data-publish="{{publish}}"
+              class="like flex-auto" 
+              bindtap="likePublish" 
+              >
+
+              <block wx:if="{{hasLikedList[idx] }}">
+                <image class="icon" src="../../images/thumbsUp_after.png" />赞<block wx:if="{{publish.likedUsers.length}}">({{publish.likedUsers.length}})</block>
+              </block>
+              <block wx:else>
+                <image class="icon" src="../../images/thumbsUp.png" />赞<block wx:if="{{publish.likedUsers.length}}">({{ publish.likedUsers.length}})</block>
+              </block> 
+
+              </button >
+              <button wx:if="{{userRoleId <= 1}}"
+              bindtap="shieldPublish"
+              data-publish="{{publish}}"
+              >屏蔽</button>
+            </view>
+            </block>
+          </view>
+     </view> 
+ </scroll-view>
+</view>
+
+
+<navigator url="/pages/exposure/exposure_publish">
+<view class="post-btn" bindtap="publish" data-schoolid="{{school.id}}">
+    <image class="icon" src="../../images/paper-airplane.png"  />
+  </view>
+  </navigator>
+
+
+<!-- <view class="weui-loadmore" style="opacity:1;">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">正在加载</view>
+</view> -->

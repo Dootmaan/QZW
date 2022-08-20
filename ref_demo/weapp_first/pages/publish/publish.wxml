@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="page {{show?'pageShow':''}}"> 
+<form bindsubmit="formSubmit">
+  <view class="publish-container">
+    <view class="publish top">
+      <view class="publish-row content">
+        <textarea  name="content" id="publish-content" maxlength="200" placeholder="说点什么..." ></textarea>
+        <view class="content-tips">200字以内</view>
+      </view>
+    </view>
+
+    <view class="publish middle">
+        <view catchtap="chooseImage" class="publish-row">
+          <view class="select-icon add">+</view>
+          <view class="add-txt" >添加图片（最多3张）</view>
+        </view>
+        <view  class="publish-row preview-imgs">
+            <image data-idx="{{index}}" bindtap="previewImage" wx:for="{{uploadImgs}}" mode="aspectFill" src="{{item}}"></image>
+        </view>
+    </view>
+    <view class="publish bottom">
+     
+      <button formType="submit" disabled="{{btnDisabled}}" type="default" loading="{{btnLoad}}" class="submit-btn">发布</button>
+    </view>
+  </view>
+</form>
+</view>

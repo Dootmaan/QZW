@@ -1,0 +1,68 @@
+{
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.25.3",
+  "appid": "wx52c9b72389e9dae3",
+  "projectname": "_07292237",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "test",
+          "pathName": "pages/exposure/exposure_hall",
+          "query": ""
+        },
+        {
+          "name": "test",
+          "pathName": "pages/publish/publish_hall",
+          "query": ""
+        },
+        {
+          "name": "邻里圈",
+          "pathName": "pages/publish/publish_hall",
+          "query": ""
+        },
+        {
+          "name": "邻里圈",
+          "pathName": "pages/publish/publish_hall",
+          "query": ""
+        },
+        {
+          "name": "匿名曝光",
+          "pathName": "pages/exposure/exposure_hall",
+          "query": ""
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/my/my",
+          "query": ""
+        },
+        {
+          "name": "投票",
+          "pathName": "pages/vote/vote_hall",
+          "query": ""
+        }
+      ]
+    }
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}
