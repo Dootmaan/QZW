@@ -12,7 +12,7 @@ Page({
     ctx.takePhoto({
       quality: 'high',
       success: (res) => {
-        // getApp().globalData.imgPath=res.tempImagePath
+        app.globalData.imgPath=res.tempImagePath
         // getApp().globalData.new_imgPath=res.tempImagePath
         // this.setData({
         //   src: res.tempImagePath
@@ -25,13 +25,23 @@ Page({
           name: 'original_img.jpg',
           url: 'http://43.142.137.117:8000/uploadImg/',
           success: (res) => {
+            console.log(res)
+            if(res.statusCode==200){
             app.globalData.new_imgPath=JSON.parse(res.data).data
             console.log(app.globalData.new_imgPath)
             wx.hideLoading()
             wx.navigateTo({
               url: '/pages/preview/preview',
             })
+          } else if(res.statusCode==500){
+            wx.showModal({
+              title: '请确保画面中有且仅有一张人脸',
+            })
+            wx.hideLoading({
+              success: (res) => {},
+            })
           }
+        },
         })
       }
     })
