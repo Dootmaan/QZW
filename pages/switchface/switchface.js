@@ -23,7 +23,7 @@ Page({
         wx.uploadFile({
           filePath: res.tempImagePath,
           name: 'original_img.jpg',
-          url: 'http://127.0.0.1:8000/uploadImg/',
+          url: 'http://43.142.137.117:8000/uploadImg/',
           success: (res) => {
             app.globalData.new_imgPath=JSON.parse(res.data).data
             console.log(app.globalData.new_imgPath)

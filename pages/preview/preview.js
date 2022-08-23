@@ -38,12 +38,19 @@ Page({
     })
   },
   saveImg:function(){
+    var app = getApp()
       wx.showLoading({
           title: '加载中...'
       });
       //wx.saveImageToPhotosAlbum方法：保存图片到系统相册
-      wx.saveImageToPhotosAlbum({
-                  filePath: getApp().globalData.new_imgPath, //图片文件路径
+      wx.downloadFile({ //下载图片到本地
+        url: app.globalData.new_imgPath,
+        filePath: wx.env.USER_DATA_PATH + '/result.jpg',
+        success(res) {
+          // console.log(wx.env.USER_DATA_PATH)
+          console.log(res)
+          wx.saveImageToPhotosAlbum({
+                  filePath: res.filePath, //图片文件路径
                   success: function (data) {
                       wx.hideLoading(); //隐藏 loading 提示框
                       wx.showModal({
@@ -91,8 +98,11 @@ Page({
                   complete(res) {
                       wx.hideLoading(); //隐藏 loading 提示框
                   }
+                
               })
-  },
+        }
+      })
+    },
  
   /**
    * Lifecycle function--Called when page hide
