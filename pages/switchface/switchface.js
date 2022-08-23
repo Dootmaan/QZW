@@ -7,17 +7,31 @@ Page({
 
   },
   takePhoto() {
+    var app=getApp()
     const ctx = wx.createCameraContext()
     ctx.takePhoto({
       quality: 'high',
       success: (res) => {
-        getApp().globalData.imgPath=res.tempImagePath
-        this.setData({
-          src: res.tempImagePath
+        // getApp().globalData.imgPath=res.tempImagePath
+        // getApp().globalData.new_imgPath=res.tempImagePath
+        // this.setData({
+        //   src: res.tempImagePath
+        // })
+        wx.showLoading({
+          title: '处理中',
         })
-        this.findFace()
-        wx.navigateTo({
-          url: '/pages/preview/preview',
+        wx.uploadFile({
+          filePath: res.tempImagePath,
+          name: 'original_img.jpg',
+          url: 'http://127.0.0.1:8000/uploadImg/',
+          success: (res) => {
+            app.globalData.new_imgPath=JSON.parse(res.data).data
+            console.log(app.globalData.new_imgPath)
+            wx.hideLoading()
+            wx.navigateTo({
+              url: '/pages/preview/preview',
+            })
+          }
         })
       }
     })
@@ -42,15 +56,6 @@ Page({
   onLoad(options) {
 
   },
-
-  findFace: function(){
-    //TODO
-    var query = wx.createSelectorQuery();
-    var img = query.select('#imgPrev').boundingClientRect(()=>{}).exec()
-    console.log(img)
-    // var tracker = tracking.ObjectTracker(['face']);
-  },
-
   fuseImgs: function(){
     //TODO
   },

@@ -17,6 +17,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    imgPath: null
+    imgPath: null,
+    new_imgPath: null
   }
 })

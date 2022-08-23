@@ -1,8 +1,0 @@
-{
-  "navigationBarBackgroundColor": "#fff",
-  "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "我的投票",
-  "backgroundTextStyle": "dark",
-  "backgroundColor": "#000000",
-  "enablePullDownRefresh":true
-}

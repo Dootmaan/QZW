@@ -1,9 +1,0 @@
-/* pages/auth_mobile/auth_mobile.wxss */
-
-.add {
-  color: #FFF;
-  background-color: #1aad19;
-  font-size: 16px;
-  line-height: 53px;
-  padding: 0 16px;
-}

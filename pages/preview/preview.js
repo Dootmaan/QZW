@@ -12,9 +12,25 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+
+  },
+   /**
+   * Lifecycle function--Called when page is initially rendered
+   */
+  onReady() {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page show
+   */
+  onShow(options) {
+    // console.log(getApp().globalData.new_imgPath)
+    var app = getApp()
     this.setData({
-      imgPath:getApp().globalData.imgPath
+      imgPath: app.globalData.new_imgPath
     })
+    console.log(this.data)
   },
   goBack: function(){
     wx.navigateBack({
@@ -27,7 +43,7 @@ Page({
       });
       //wx.saveImageToPhotosAlbum方法：保存图片到系统相册
       wx.saveImageToPhotosAlbum({
-                  filePath: getApp().globalData.imgPath, //图片文件路径
+                  filePath: getApp().globalData.new_imgPath, //图片文件路径
                   success: function (data) {
                       wx.hideLoading(); //隐藏 loading 提示框
                       wx.showModal({
@@ -77,20 +93,7 @@ Page({
                   }
               })
   },
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady() {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow() {
-
-  },
-
+ 
   /**
    * Lifecycle function--Called when page hide
    */
