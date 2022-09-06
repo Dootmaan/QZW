@@ -7,4 +7,4 @@
 
 - 现在需要尽快加入的是基于纯前端方法实现的人脸识别和图片拼接。这两个函数应该写在pages/switchface/switchface.js中（也即findFace和fuseImgs），然后在ctx.takePhoto()成功后的函数success: (res) => {…… 内调用他们。输入的参数显然只有图片文件的地址，输出时可以选择直接把这个文件覆盖。
 
-
+请使用WeChat_devtools打开此工程，并确保关闭了IDE的网络安全通信检查。后端代码请移步：https://github.com/Dootmaan/QZW_backend。
